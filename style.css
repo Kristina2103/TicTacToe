@@ -7,6 +7,8 @@
   --body-color: #ff149345;
   --modal-color: #363636eb;
   --borders-color: deeppink;
+  --red-color: #a30000eb;
+  --winner-color: #ff1493cf;
 }
 body {
   display: flex;
@@ -57,12 +59,58 @@ h1 {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--modal-color);
   top: 50%;
   transform: translateY(-50%);
   color: #fff;
-  font-size: 70px;
   display: none;
+  z-index: 100;
+}
+#end.winner {
+  background: var(--winner-color);
+}
+#end.fail {
+  background: var(--red-color);
+}
+#end.unresolved {
+  background: var(--modal-color);
+}
+#end .result,
+#end h2 {
+  margin: 0;
+}
+#end h2 {
+  font-size: 50px;
+}
+#end .result {
+  font-size: 60px;
+}
+
+button {
+  cursor: pointer;
+  margin-top: 2em;
+  padding: 1em 1.5em;
+  border-radius: 0%;
+  border: none;
+  box-shadow: 3px 3px 8px #7e7e7e;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+}
+button:active,
+button:focus {
+  outline: none;
+}
+button:hover {
+  transform: translateY(3px);
+}
+
+.reset-button {
+  position: absolute;
+  left: 20px;
 }
